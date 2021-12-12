@@ -6,13 +6,14 @@ const PORT = process.env.PORT || 5000
 const app = express()
 app.use(express.json())
 
-// db.pool.query(`CREATE TABLE lists (
-//     id INTEGER AUTO_INCREMENT,
-//     value TEXT,
-//     PRIMARY KEY (id)
-// );`, (err, results, fileds) => {
-//     console.log(err)
-// })
+//RDS 사용시
+db.pool.query(`CREATE TABLE lists (
+    id INTEGER AUTO_INCREMENT,
+    value TEXT,
+    PRIMARY KEY (id)
+);`, (err, results, fileds) => {
+    console.log(results)
+})
 
 
 app.get('/api/values', (req, res) => {

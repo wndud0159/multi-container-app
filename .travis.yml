@@ -26,10 +26,10 @@ deploy:
   provider: elasticbeanstalk
   edge: true
   region: "us-east-1"
-  app: "multi-container-app"
-  env: "Multicontainerapp-env"
+  app: "docker-multi-app"
+  env: "Dockermultiapp-env-1"
   bucket_name: elasticbeanstalk-us-east-1-276223326741
-  bucket_path: "multi-container-app"
+  bucket_path: "docker-multi-app"
   on:
     branch: main
   
