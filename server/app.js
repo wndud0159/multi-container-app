@@ -11,8 +11,9 @@ app.use(express.json())
 //     value TEXT,
 //     PRIMARY KEY (id)
 // );`, (err, results, fileds) => {
-//     console.log(results)
+//     console.log(err)
 // })
+
 
 app.get('/api/values', (req, res) => {
     db.pool.query(`SELECT * FROM lists;`,

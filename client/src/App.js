@@ -48,7 +48,7 @@ function App() {
           <br/>
           <form className="example" onSubmit={submitHandler}>
             <input type="text" placeholder="입력해주세요.." vlaue={value} required onChange={changeHandler}/>
-            <button type="submit">확인s</button>
+            <button type="submit">확인</button>
           </form>
         </div>
       </header>
