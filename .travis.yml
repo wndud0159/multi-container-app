@@ -6,19 +6,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t react-test-app -f ./client/Dockerfile.dev ./client
+  - docker build -t wndud0159/react-test-app -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true react-test-app npm run test
+  - docker run -e CI=true wndud0159/react-test-app npm run test
 
 after_success:
-  - docker build -t docker-frontend ./client
-  - docker build -t docker-backend ./server
-  - docker build -t docker-nginx ./nginx
+  - docker build -t wndud0159/docker-frontend ./client
+  - docker build -t wndud0159/docker-backend ./server
+  - docker build -t wndud0159/docker-nginx ./nginx
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u $"DOCKER_HUB_ID" --password-stdin
 
-  - docker push docker-frontend
-  - docker push docker-backend
-  - docker push docker-nginx
+  - docker push wndud0159/docker-frontend
+  - docker push wndud0159/docker-backend
+  - docker push wndud0159/docker-nginx
 
