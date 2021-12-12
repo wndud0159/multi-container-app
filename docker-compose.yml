@@ -15,7 +15,7 @@ services:
       - "80:80"
 
   backend:
-    image: wndu0159/docker-backend
+    image: wndud0159/docker-backend
     container_name: app_backend
     volumes:
       - /app/node_modules
