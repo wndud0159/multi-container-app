@@ -16,6 +16,10 @@ code {
   width: 375px;
 }
 
+.container li {
+  color: white;
+}
+
 form.example input {
   padding: 10px;
   font-size: 17px;

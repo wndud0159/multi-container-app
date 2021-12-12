@@ -4,7 +4,8 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'mysql',
     user: 'root',
-    password: process.env.MYSQL_ROOT_PASSWORD,
-    databasee: process.env.MYSQL_DATABACE,
+    password: 'root',
+    database: 'myapp',
+    port: 3306
 })
 exports.pool = pool

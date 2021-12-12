@@ -5,10 +5,13 @@ import './App.css';
 
 function App() {
 
+  const [lists, setLists] = useState([])
+  const [value, setValue] = useState("")
+
   useEffect(() => {
     axios.get('/api/values')
       .then(response => {
-        console.log('response', response.data)
+        console.log('get lists response', response.data)
         setLists(response.data)
       })
   }, [])
@@ -23,18 +26,15 @@ function App() {
     axios.post(`/api/value`, { value: value })
       .then(response => {
         if (response.data.success) {
-          console.log('response', response)
-          setLists([...lists, response.data.value])
-          setValue("")
+          console.log('post lists response', response)
+          setLists([...lists, response.data])
+          setValue("");
         } else {
           alert('Server Error')
         }
       }) 
   }
 
-  const [lists, setLists] = useState([])
-  const [value, setValue] = useState("")
-//dff
   return (
     <div className="App">
       <header className="App-header">
@@ -47,7 +47,7 @@ function App() {
           }
           <br/>
           <form className="example" onSubmit={submitHandler}>
-            <input type="text" placeholder="입력해주세요.." vlaue={value} required onChange={changeHandler}/>
+            <input type="text" placeholder="입력해주세요.." value={value} required onChange={changeHandler}/>
             <button type="submit">확인</button>
           </form>
         </div>
