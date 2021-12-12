@@ -22,3 +22,16 @@ after_success:
   - docker push wndud0159/docker-backend
   - docker push wndud0159/docker-nginx
 
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-east-1"
+#   app: "multi-container-app"
+#   env: "Multicontainerapp-env"
+#   bucket_name: elasticbeanstalk-us-east-1-276223326741
+#   bucket_path: "multi-container-app"
+#   on:
+#     branch: main
+  
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_ACCESS_KEY
+

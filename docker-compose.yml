@@ -1,0 +1,31 @@
+version: "3"
+services:
+  frontend:
+    image: wndud0159/docker-frontend
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    stdin_open: true
+    mem_limit: 128m
+
+  nginx: 
+    restart: always
+    image: wndud0159/docker-nginx
+    ports: 
+      - "80:80"
+
+  backend:
+    image: wndu0159/docker-backend
+    container_name: app_backend
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    mem_limit: 128m
+    environment: 
+      MYSQL_HOST: $MYSQL_HOST 
+      MYSQL_USER: $MYSQL_USER 
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_PORT: $MYSQL_PORT   
+
+
