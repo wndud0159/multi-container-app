@@ -21,6 +21,4 @@ after_success:
   - docker push wndud0159/docker-frontend
   - docker push wndud0159/docker-backend
   - docker push wndud0159/docker-nginx
-  DOCKER_HUB_PASSWORD
-  DOCKER_HUB_ID
 
